@@ -5,12 +5,12 @@ RUN mvn clean package
 
 FROM openjdk:8
 LABEL MAINTAINER="K8sCat <k8scat@gmail.com>"
-ENV TZ=Asia/Shanghai \
-    spring.config.additional-location=/app/application-prod.yml
+ENV TZ=Asia/Shanghai
 WORKDIR /app
 EXPOSE 8160
 COPY --from=build-api /app/campus-modular/target/campus-modular.jar ./app.jar
 ENTRYPOINT ["java", \
             "-Djava.security.egd=file:/dev/./urandom", \
             "-Dserver.port=8160", \
-            "-jar", "/app/app.jar"]
+            "-jar", "/app/app.jar", \
+            "--spring.profiles.active=prod"]
