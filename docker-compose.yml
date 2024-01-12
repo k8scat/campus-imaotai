@@ -1,23 +1,20 @@
 services:
   imaotai-db:
-    image: imaotai-db:latest
-    build:
-      context: .
-      dockerfile: ./mysql.Dockerfile
+    image: mysql:5.7
     container_name: imaotai-db
     environment:
       MYSQL_ROOT_PASSWORD: 123456789
     volumes:
       - ./volumes/db/data/:/var/lib/mysql/
       - ./volumes/db/logs:/logs
+      - ./doc/sql/campus_imaotai-1.0.5.sql:/docker-entrypoint-initdb.d/campus_imaotai-1.0.5.sql
     command: [
           'mysqld',
           '--innodb-buffer-pool-size=80M',
           '--character-set-server=utf8mb4',
           '--collation-server=utf8mb4_unicode_ci',
           '--default-time-zone=+8:00',
-          '--lower-case-table-names=1',
-          '--default-authentication-plugin=mysql_native_password'
+          '--lower-case-table-names=1'
         ]
     networks:
       - imaotai_net
