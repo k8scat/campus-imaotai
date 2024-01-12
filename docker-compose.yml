@@ -38,6 +38,8 @@ services:
     container_name: imaotai-api
     networks:
       - imaotai_net
+    depends_on:
+      - imaotai-db
 
   imaotai-web:
     image: imaotai-web:latest
