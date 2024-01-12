@@ -21,6 +21,7 @@ services:
         ]
     networks:
       - imaotai_net
+    restart: always
 
   imaotai-redis:
     image: redis:6.2.12
@@ -29,6 +30,7 @@ services:
       - ./volumes/redis/data/:/redis/data/
     networks:
       - imaotai_net
+    restart: always
 
   imaotai-api:
     image: imaotai-api:latest
@@ -40,6 +42,7 @@ services:
       - imaotai_net
     depends_on:
       - imaotai-db
+    restart: always
 
   imaotai-web:
     image: imaotai-web:latest
@@ -55,6 +58,9 @@ services:
       - imaotai_net
     ports:
       - 8160:8160
+    depends_on:
+      - imaotai-api
+    restart: always
 
 networks:
   imaotai_net:
