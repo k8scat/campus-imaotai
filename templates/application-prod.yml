@@ -1,3 +1,4 @@
+---
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
@@ -22,6 +23,7 @@ spring:
         connectionTestQuery: SELECT 1
         keepaliveTime: 30000
 
+---
 spring:
   redis:
     host: imaotai-redis
