@@ -30,7 +30,9 @@ services:
 
   imaotai-api:
     image: imaotai-api:latest
-    build: ./api.Dockerfile
+    build:
+      context: .
+      dockerfile: ./api.Dockerfile
     container_name: imaotai-api
     volumes:
       - ./templates/application-prod.yml:/app/application-prod.yml
@@ -39,7 +41,9 @@ services:
 
   imaotai-web:
     image: imaotai-web:latest
-    build: ./web.Dockerfile
+    build:
+      context: .
+      dockerfile: ./web.Dockerfile
     container_name: imaotai-nginx
     volumes:
       - ./templates/nginx.conf:/etc/nginx/nginx.conf
