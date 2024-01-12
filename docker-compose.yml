@@ -49,7 +49,7 @@ services:
     build:
       context: .
       dockerfile: ./web.Dockerfile
-    container_name: imaotai-nginx
+    container_name: imaotai-web
     volumes:
       - ./templates/web.conf:/etc/nginx/conf.d/web.conf
       - ./volumes/web/log:/var/log/nginx
