@@ -1,4 +1,4 @@
-FROM node:12 AS build-web
+FROM node:16 AS build-web
 WORKDIR /app
 COPY ./vue_campus_admin .
 RUN npm i && npm run build:prod

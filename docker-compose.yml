@@ -57,7 +57,7 @@ services:
     networks:
       - imaotai_net
     ports:
-      - 8160:8160
+      - 80:80
     depends_on:
       - imaotai-api
     restart: always
