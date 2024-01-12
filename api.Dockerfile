@@ -13,5 +13,5 @@ ENTRYPOINT ["java", \
             "-Djava.security.egd=file:/dev/./urandom", \
             "-Dspring.config.additional-location=/app/application-prod.yml", \
             "-Dserver.port=8160", \
-            "--spring.profiles.active=prod", \
-            "-jar", "/app/app.jar"]
+            "-jar", "/app/app.jar", \
+            "--spring.profiles.active=prod"]
