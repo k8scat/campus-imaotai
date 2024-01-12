@@ -38,6 +38,8 @@ services:
       context: .
       dockerfile: ./api.Dockerfile
     container_name: imaotai-api
+    volumes:
+      - ./templates/application-prod.yml:/app/application-prod.yml
     networks:
       - imaotai_net
     depends_on:

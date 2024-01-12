@@ -11,6 +11,7 @@ EXPOSE 8160
 COPY --from=build /app/campus-modular/target/campus-modular.jar ./app.jar
 ENTRYPOINT ["java", \
             "-Djava.security.egd=file:/dev/./urandom", \
+            "-Dspring.config.additional-location=/app/application-prod.yml", \
             "-Dserver.port=8160", \
-            "-jar", "/app/app.jar", \
-            "--spring.profiles.active=prod"]
+            "--spring.profiles.active=prod", \
+            "-jar", "/app/app.jar"]
