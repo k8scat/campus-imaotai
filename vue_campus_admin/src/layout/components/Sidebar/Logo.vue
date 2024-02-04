@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      title: 'campus',
+      title: '西门i茅台',
       logo: logoImg
     }
   }
