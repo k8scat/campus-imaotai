@@ -1,6 +1,6 @@
 <template>
   <div class="app-container home">
-    <p>
+    <!-- <p>
       本项目中所有内容只供学习和研究使用，不得将本项目中任何内容用于违反国家/地区/组织等的法律法规或相关规定的其他用途。
     </p>
     <p>
@@ -15,11 +15,44 @@
       <p>campus-imaotai:{{ version }}</p>
       <p>campus框架:{{ frameworkVersion }}</p>
     </el-card>
+  </div> -->
+    西门i茅台自动申购平台功能介绍 1. 使用说明文档（飞书文档）
+    西门自动化申购i茅台网站 2. 每天9点-9点50分之间随机时间点自动申购i茅台 3.
+    每天11点-12点自动旅行、自动领取旅行小茅运奖励 4.
+    每天19点自动获取中签结果，可在侧边栏 i茅台->日志
+    查看，中签了才会有日志，不中没有 5.
+    执行结果会实时通知到你微信上（pushplus推送加公众号推送）
+    首次注册的朋友，需添加西门小助手添加“i茅台”模块权限，加「西门茅台自动申购群」，找西门小助手！
+    万1免5券商开户，找西门小助手！
+
+    <img :src="imgSimonWeixin" />
+
+    关注西门
+    欢迎关注“西门吹雪实盘”公众号，百万实盘量化可转债、ETF网格，关注有万一优惠开户。
+
+    <img :src="imgSimonOA" />
+
+    欢迎关注“打新必读”公众号，每天新股、新债、配债分析和上市预测的低风险策略。
+
+    <img :src="imgSimonOA2" />
+
+    欢迎关注“西门爱搞钱”知识星球，免费发布券商保本羊毛、茅台、纪念币、信用卡优惠券等套利机会
+
+    <img :src="imgSimonZsxq1" />
+
+    欢迎关注“西门吹雪话投资”知识星球，一键跟投西门百万实盘的可转债轮动、网格ETF策略
+
+    <img :src="imgSimonZsxq2" />
   </div>
 </template>
 
 <script>
-import {getVersion} from "@/api/system/index";
+import { getVersion } from "@/api/system/index";
+import imgSimonWeixin from "@/assets/images/simon-weixin.png";
+import imgSimonOA from "@/assets/images/simon-oa.png";
+import imgSimonOA2 from "@/assets/images/simon-oa2.png";
+import imgSimonZsxq1 from "@/assets/images/simon-zsxq1.png";
+import imgSimonZsxq2 from "@/assets/images/simon-zsxq2.png";
 
 export default {
   name: "Index",
@@ -28,6 +61,11 @@ export default {
       // 版本号
       version: "",
       frameworkVersion: "",
+      imgSimonWeixin,
+      imgSimonOA,
+      imgSimonOA2,
+      imgSimonZsxq1,
+      imgSimonZsxq2,
     };
   },
   created() {
