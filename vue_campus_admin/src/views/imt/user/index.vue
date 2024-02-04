@@ -422,7 +422,10 @@
         <el-row>
           <el-col :span="12">
             <el-form-item label="门店商品ID" prop="ishopId">
-              <el-input v-model="form.ishopId" placeholder="请输入门店商品ID"/>
+              <el-input v-model="form.ishopId" placeholder="请输入门店商品ID" />
+              <el-link type="primary" @click="onClickShopItemList"
+                >门店商品列表</el-link
+              >
             </el-form-item>
           </el-col>
           <el-col :span="12">
@@ -431,6 +434,9 @@
                 v-model="form.pushPlusToken"
                 placeholder="请输入推送token"
               />
+              <el-link type="primary" @click="onClickPushplus"
+                >推送token</el-link
+              >
             </el-form-item>
           </el-col>
         </el-row>
@@ -617,6 +623,12 @@ export default {
     });
   },
   methods: {
+    onClickShopItemList() {
+      window.open("/imt/shop", "_blank");
+    },
+    onClickPushplus() {
+      window.open("https://www.pushplus.plus/", "_blank");
+    },
     //item下拉框选择
     changeItem(e) {
       this.form.itemCode = "";
