@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
-      <h3 class="title">campus-imaotai后台管理系统</h3>
+      <h3 class="title">西门i茅台后台管理系统</h3>
       <el-form-item prop="username">
         <el-input
           v-model="loginForm.username"
@@ -38,7 +38,7 @@
         </div>
       </el-form-item>
       <el-checkbox v-model="loginForm.rememberMe" style="margin:0px 0px 25px 0px;">记住密码</el-checkbox>
-      <el-link type="primary" href="/register">注册</el-link>
+      <el-link type="primary" href="/register" style="margin-left: 10px;">注册</el-link>
       <el-form-item style="width:100%;">
         <el-button
           :loading="loading"
@@ -56,9 +56,9 @@
       </el-form-item>
     </el-form>
     <!--  底部  -->
-    <div class="el-login-footer">
+    <!-- <div class="el-login-footer">
       <span>Copyright © 2023 oddfar.com All Rights Reserved.</span>
-    </div>
+    </div> -->
   </div>
 </template>
 
